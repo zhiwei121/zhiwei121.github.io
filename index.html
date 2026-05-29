@@ -2,5 +2,24 @@
 layout: default
 title: 我的主页
 ---
-<h1>欢迎来到我的博客！</h1>
-<p>这是用 Jekyll 搭建的个人网站。</p>
+
+<div class="hero">
+  <h1>欢迎来到我的博客</h1>
+  <p>记录学习历程，分享技术心得</p>
+</div>
+
+<div class="profile-card">
+  <h2>关于我</h2>
+  <p>大家好！我是云南大学信息学院的一名学生。热爱编程，喜欢探索新技术。</p>
+  <p>这个博客是我在《创新实验》课程中搭建的，用于记录学习笔记和技术分享。</p>
+</div>
+
+<h1>最新文章</h1>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+    </li>
+  {% endfor %}
+</ul>
